@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <udp address="127.0.0.1" port="6262"/>
+  <dbconnect>
+     <db description="user" connectionstring="Database=service;Server=127.0.0.1;User Id=root;Password=kiiik;Port=3306;pooling=true;Min Pool Size=20;Max Pool Size=100"/>
+     <db description="business" connectionstring="Database=kgame;Server=127.0.0.1;User Id=root;Password=kiiik;Port=3306;pooling=true;Min Pool Size=20;Max Pool Size=100"/>
+     <db description="historydata" connectionstring="Database=historydata;Server=127.0.0.1;User Id=root;Password=kiiik;Port=3306;pooling=true;Min Pool Size=20;Max Pool Size=100"/>
+  </dbconnect>
+</config>

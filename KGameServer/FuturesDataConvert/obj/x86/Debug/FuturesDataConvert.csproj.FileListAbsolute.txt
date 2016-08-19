@@ -1,0 +1,8 @@
+E:\tomcat-8.0.22\webapps\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.exe
+E:\tomcat-8.0.22\webapps\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.pdb
+E:\tomcat-8.0.22\webapps\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.exe
+E:\tomcat-8.0.22\webapps\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.pdb
+D:\MyWork\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.exe
+D:\MyWork\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.pdb
+D:\MyWork\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.exe
+D:\MyWork\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.pdb
