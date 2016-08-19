@@ -10,7 +10,7 @@ namespace Base64Encoder
     {
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"E:\tomcat-8.0.22\webapps\KGame\res\title.png",FileMode.Open,FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\tomcat-8.0.22\webapps\KGame\res\title.png",FileMode.Open,FileAccess.Read);
 
             byte[] content = new byte[fs.Length];
             fs.Read(content, 0, (int)fs.Length);

@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Xml;
 using System.Threading;
+using System.Data;
 
 namespace KGameServer
 {
@@ -418,6 +419,57 @@ namespace KGameServer
             }
             return -1;
         }
+        /// <summary>
+        /// 获得某次战斗的数据信息
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public static matchInfo GetMatchID(int matchID)
+        {
+            matchInfo p = null;
+            MySqlCommand command = null;
+            MySqlDataAdapter adapter = null;
+            DataSet ds = null;
+            MySqlConnection mySqlConnection = OpenMySqlConnection(0);
+            if (mySqlConnection == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                command = mySqlConnection.CreateCommand();
+                command.CommandText = "select * from kgame.tbl_match where ID =" + matchID;
+                
+                adapter = new MySqlDataAdapter(command);
+                ds = new DataSet();
+                ds.Tables.Clear();
+                adapter.Fill(ds);
+                if (ds!= null)
+                {
+                    string aCode = ds.Tables[0].Rows[0]["CODE"].ToString();
+                    string aExchange = ds.Tables[0].Rows[0]["EXCHANGE"].ToString();
+                    DateTime aStartTime = (DateTime)ds.Tables[0].Rows[0]["STARTDATE"]; ;
+                    int dayCount = (int)ds.Tables[0].Rows[0]["DAYCOUNT"];
+                    p = new matchInfo(aCode, aExchange, aStartTime, dayCount);
+                    return p;
+                   
+                }else
+                {
+                    Util.Log("数据未取到,需要再取一次数据");
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
+            return null;
+        }
+
 
         public static int AddNewMatchInfo(int matchType,CodeInfo codeInfo,DateTime startDate,int dayCount)
         {
@@ -434,7 +486,7 @@ namespace KGameServer
                 command.CommandText = "insert into kgame.tbl_match (DATETIME,TYPE,CODE,EXCHANGE,STARTDATE,DAYCOUNT,FLAG) values (";
                 string dateTimeNow=DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 command.CommandText += "'"+dateTimeNow+"',";
-                command.CommandText += "0,";
+                command.CommandText += matchType+",";
                 command.CommandText += "'" + codeInfo.code + "',";
                 command.CommandText += "'" + codeInfo.exchange + "',";
                 command.CommandText += "'" + startDate.ToString("yyyy-MM-dd") + "',";
@@ -457,7 +509,52 @@ namespace KGameServer
             }
             return matchID;
         }
+        /// <summary>
+        /// 保存用户交易记录
+        /// </summary>
+        ///  <param name="ID"></param>'主键MATCHID*10000+USERID
+        /// <param name="USER_ID"></param>'玩家的ID
+        /// <param name="MATCH_ID"></param> '对决的ID
+        /// <param name="TRADEDAYINDEX"></param>'交易日的信息，从起始日期开始的第几天，最小为0',
+        /// <param name="BUYSELL"></param>'买卖方向，0为买入，1为卖出'
+        /// <param name="PRICE"></param>'买卖价格
+        /// <returns></returns>
+        ///  public void ProcessUserOperation(PlayerConnection playerConnection, int index, bool isBuy)
+        public static int AddNewTraderecordInfo(PlayerConnection playerConnection,int matchID, int index, bool isBuy, double price)
+        {
+            int traderID = -1;
+            
+            MySqlConnection mySqlConnection = OpenMySqlConnection(0);
+            if (mySqlConnection == null)
+            {
+                return traderID;
+            }
 
+            try
+            {
+                MySqlCommand command = mySqlConnection.CreateCommand();
+                command.CommandText = "insert into kgame.tbl_traderecord (USER_ID,MATCH_ID,TRADEDAYINDEX,BUYSELL,PRICE) values (";
+                command.CommandText += playerConnection.UserId + ",";
+                command.CommandText += matchID + ",";
+                command.CommandText += index + ",";
+                command.CommandText += isBuy + ",";
+                command.CommandText += price + ")";
 
+                command.ExecuteScalar();
+                command.CommandText = "select ID from kgame.tbl_traderecrod where USER_ID=" + playerConnection.UserId + " and MATCH_ID='" + matchID + "'";
+                traderID = (int)command.ExecuteScalar();
+                Util.Log("New Match added to database match id=" + traderID);
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            };
+
+            return traderID;
+        }
     }
 }

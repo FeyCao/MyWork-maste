@@ -1,0 +1,57 @@
+2016-8-19 上午 9:55:35 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160819 09:55:41.938][6][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160819 09:55:41.941][10][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160819 09:55:41.942][10][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160819 09:55:41.946][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:56479][0:] 处理没有来源的消息
+
+[20160819 09:55:41.946][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160819 09:55:41.949][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160819 09:55:41.951][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:55:42.175][10][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|s159a#168174|
+
+[20160819 09:55:42.183][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|s159a#168174#null|
+
+[20160819 09:55:42.183][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:55:42.184][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:s159a 密码:168174 来源:null
+
+[20160819 09:55:42.185][10][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=s159a password=168174 source=null
+
+[20160819 09:55:42.193][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160819 09:55:42.195][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=118
+
+[20160819 09:55:42.195][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=118
+
+[20160819 09:55:44.199][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|s159a|
+
+[20160819 09:55:44.205][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160819 09:55:44.205][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:55:45.455][10][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:56479][118:s159a]
+
+[20160819 09:55:45.459][10][Normal][KGameServer.Match.Start]	1人局开始: [118:] 
+
+[20160819 09:55:46.426][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160819 09:55:46.427][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160819 09:55:46.427][12][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160819 09:55:46.456][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160819 09:55:46.459][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160819 09:55:46.472][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160819 09:55:46.472][12][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160819 09:55:47.885][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+

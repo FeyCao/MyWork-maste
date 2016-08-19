@@ -10,7 +10,7 @@ E:\tomcat-8.0.22\webapps\KGameServer\Fleck\bin\Debug\Fleck.dll
 E:\tomcat-8.0.22\webapps\KGameServer\Fleck\bin\Debug\Fleck.pdb
 E:\tomcat-8.0.22\webapps\KGameServer\Fleck\obj\Debug\Fleck.dll
 E:\tomcat-8.0.22\webapps\KGameServer\Fleck\obj\Debug\Fleck.pdb
-D:\MyWork\KGameServer\Fleck\bin\Debug\Fleck.dll
-D:\MyWork\KGameServer\Fleck\bin\Debug\Fleck.pdb
-D:\MyWork\KGameServer\Fleck\obj\Debug\Fleck.dll
-D:\MyWork\KGameServer\Fleck\obj\Debug\Fleck.pdb
+C:\KGameServer\Fleck\bin\Debug\Fleck.dll
+C:\KGameServer\Fleck\bin\Debug\Fleck.pdb
+C:\KGameServer\Fleck\obj\Debug\Fleck.dll
+C:\KGameServer\Fleck\obj\Debug\Fleck.pdb

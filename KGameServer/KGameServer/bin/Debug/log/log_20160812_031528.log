@@ -1,0 +1,110 @@
+2016-8-12 下午 3:15:28 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160812 15:15:36.401][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160812 15:15:36.404][11][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160812 15:15:36.405][11][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160812 15:15:36.408][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:53338][0:] 处理没有来源的消息
+
+[20160812 15:15:36.408][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160812 15:15:36.414][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160812 15:15:36.415][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:15:36.737][11][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|c108a#828122|
+
+[20160812 15:15:36.746][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|c108a#828122#null|
+
+[20160812 15:15:36.747][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:15:36.748][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:c108a 密码:828122 来源:null
+
+[20160812 15:15:36.749][11][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=c108a password=828122 source=null
+
+[20160812 15:15:36.757][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160812 15:15:36.759][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=67
+
+[20160812 15:15:36.759][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=67
+
+[20160812 15:15:38.557][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|c108a|
+
+[20160812 15:15:38.563][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160812 15:15:38.563][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:15:38.565][11][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:53338][67:c108a]
+
+[20160812 15:15:38.571][11][Normal][KGameServer.Match.Start]	1人局开始: [67:] 
+
+[20160812 15:15:38.572][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160812 15:15:38.573][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160812 15:15:38.573][13][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160812 15:15:38.615][13][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160812 15:15:38.618][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160812 15:15:38.630][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160812 15:15:38.630][13][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160812 15:15:38.638][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160812 15:15:38.639][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=91
+
+[20160812 15:15:38.639][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=89
+
+[20160812 15:15:38.639][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160812 15:15:38.639][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=锰硅主连 XZCE
+
+[20160812 15:15:38.640][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	总个数不够count=357，重新取
+
+[20160812 15:15:38.640][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=91
+
+[20160812 15:15:38.640][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=58
+
+[20160812 15:15:38.640][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160812 15:15:38.640][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=沪铅主连 XSGE
+
+[20160812 15:15:38.641][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=沪铅主连 XSGE ,startIndex=18
+
+[20160812 15:15:38.703][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160812 15:15:38.760][13][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=76
+
+[20160812 15:15:38.762][13][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160812 15:15:38.763][13][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160812 15:15:46.766][6][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|13|
+
+[20160812 15:15:46.766][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:15:52.298][11][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',13',True',0)' at line 1
+
+[20160812 15:15:52.322][11][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:15:53.778][11][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:15:54.230][11][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:c108a，信息内容为:F|1#c108a#0.00#0#沪铅主连(上期所)#2015-11-2#2016-4-26|
+
+[20160812 15:16:04.105][6][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160812 15:16:06.187][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:16:06.188][11][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:c108a，信息内容为:F|1#c108a#0.00#0#沪铅主连(上期所)#2015-11-2#2016-4-26|
+

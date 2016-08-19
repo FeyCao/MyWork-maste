@@ -1,0 +1,71 @@
+2016-8-19 上午 9:18:00 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160819 09:18:07.696][6][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160819 09:18:07.697][11][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160819 09:18:07.700][11][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160819 09:18:07.703][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:55465][0:] 处理没有来源的消息
+
+[20160819 09:18:07.703][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160819 09:18:07.707][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160819 09:18:07.707][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:18:07.928][11][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|t156a#799684|
+
+[20160819 09:18:07.937][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|t156a#799684#null|
+
+[20160819 09:18:07.937][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:18:07.939][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:t156a 密码:799684 来源:null
+
+[20160819 09:18:07.940][11][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=t156a password=799684 source=null
+
+[20160819 09:18:07.947][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160819 09:18:07.950][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=115
+
+[20160819 09:18:07.950][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=115
+
+[20160819 09:18:10.175][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|t156a|
+
+[20160819 09:18:10.181][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160819 09:18:10.182][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 09:18:10.826][11][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:55465][115:t156a]
+
+[20160819 09:18:10.832][11][Normal][KGameServer.Match.Start]	1人局开始: [115:] 
+
+[20160819 09:18:11.670][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160819 09:18:11.671][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160819 09:18:11.672][13][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160819 09:18:11.700][13][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160819 09:18:11.703][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160819 09:18:11.715][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160819 09:18:11.715][13][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160819 09:18:17.259][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+
+[20160819 09:19:59.444][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160819 09:19:59.472][13][Normal][KGameServer.App.CurrentDomain_UnhandledException]	System.ArgumentOutOfRangeException: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 KGameServer.Match.OnReceiveHistoryDataCallBack(List`1 historyDataList, CodeInfo codeInfo) 位置 C:\KGameServer\KGameServer\Match.cs:行号 414
+   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 471
+   在 KGameServer.HisDataMng.MainProcessThread() 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 206
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+

@@ -1,0 +1,90 @@
+2016-8-18 下午 4:20:27 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160818 16:20:34.499][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160818 16:20:34.501][9][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160818 16:20:34.503][9][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160818 16:20:34.506][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:59512][0:] 处理没有来源的消息
+
+[20160818 16:20:34.506][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160818 16:20:34.508][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160818 16:20:34.509][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 16:20:34.733][9][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|c141e#372030|
+
+[20160818 16:20:34.739][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|c141e#372030#null|
+
+[20160818 16:20:34.739][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 16:20:34.740][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:c141e 密码:372030 来源:null
+
+[20160818 16:20:34.741][9][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=c141e password=372030 source=null
+
+[20160818 16:20:34.749][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160818 16:20:34.752][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=100
+
+[20160818 16:20:34.752][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=100
+
+[20160818 16:20:38.037][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|c141e|
+
+[20160818 16:20:38.042][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160818 16:20:38.042][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 16:20:46.525][9][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:59512][100:c141e]
+
+[20160818 16:20:46.533][9][Normal][KGameServer.Match.Start]	1人局开始: [100:] 
+
+[20160818 16:21:59.608][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160818 16:21:59.614][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160818 16:21:59.615][11][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160818 16:21:59.648][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160818 16:22:01.551][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160818 16:22:01.568][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160818 16:22:01.569][11][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160818 16:22:10.989][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+
+[20160818 16:22:11.056][11][Normal][KGameServer.Util.LogException]	Unknown column 'matchID' in 'where clause'
+
+[20160818 16:22:11.069][11][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 402
+
+[20160818 16:22:11.069][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160818 16:22:11.086][11][Normal][KGameServer.App.CurrentDomain_UnhandledException]	System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KGameServer.Match.OnReceiveHistoryDataCallBack(List`1 historyDataList, CodeInfo codeInfo) 位置 C:\KGameServer\KGameServer\Match.cs:行号 414
+   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 491
+   在 KGameServer.HisDataMng.MainProcessThread() 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 206
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+
+[20160818 16:22:28.487][11][Normal][KGameServer.App.CurrentDomain_UnhandledException]	System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KGameServer.Match.OnReceiveHistoryDataCallBack(List`1 historyDataList, CodeInfo codeInfo) 位置 C:\KGameServer\KGameServer\Match.cs:行号 414
+   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 491
+   在 KGameServer.HisDataMng.MainProcessThread() 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 206
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+

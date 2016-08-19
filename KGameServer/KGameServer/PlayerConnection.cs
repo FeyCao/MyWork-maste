@@ -148,6 +148,10 @@ namespace KGameServer
                     //客户端操作内容结束
                     ProcessUserOperationEnd();
                     break;
+                case "S":
+                    //客户端操作分享请求
+                    ProcessUserOperationShare(p.Content);
+                    break;
 
                 default:
                     Util.Log("unknown msg type");
@@ -161,6 +165,15 @@ namespace KGameServer
         private void ProcessUserOperationEnd()
         {
             MatchRunning.PlayerEnd(this);
+        }
+
+
+        /// <summary>
+        /// 该玩家的对局分享吧
+        /// </summary>
+        private void ProcessUserOperationShare(string content)
+        {
+            MatchRunning.PlayerShare(this);
         }
 
         public void ProcessUserQuickLogin(string content)

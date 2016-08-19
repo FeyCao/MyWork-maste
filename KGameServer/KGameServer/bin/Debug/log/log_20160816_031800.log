@@ -1,0 +1,423 @@
+2016-8-16 下午 3:18:00 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160816 15:18:10.770][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160816 15:18:10.772][10][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160816 15:18:10.773][10][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160816 15:18:10.777][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:51288][0:] 处理没有来源的消息
+
+[20160816 15:18:10.777][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160816 15:18:10.782][19][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160816 15:18:10.783][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:11.010][10][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|s124e#244987|
+
+[20160816 15:18:11.019][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|s124e#244987#null|
+
+[20160816 15:18:11.019][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:11.021][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:s124e 密码:244987 来源:null
+
+[20160816 15:18:11.022][10][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=s124e password=244987 source=null
+
+[20160816 15:18:11.030][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160816 15:18:11.032][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=83
+
+[20160816 15:18:11.032][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=83
+
+[20160816 15:18:14.430][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|s124e|
+
+[20160816 15:18:14.436][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160816 15:18:14.436][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:14.438][10][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:51288][83:s124e]
+
+[20160816 15:18:14.443][10][Normal][KGameServer.Match.Start]	1人局开始: [83:] 
+
+[20160816 15:18:14.444][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160816 15:18:14.445][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160816 15:18:14.446][12][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160816 15:18:14.488][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160816 15:18:14.491][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160816 15:18:14.503][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160816 15:18:14.503][12][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160816 15:18:14.510][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160816 15:18:14.511][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=91
+
+[20160816 15:18:14.511][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=7
+
+[20160816 15:18:14.511][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160816 15:18:14.511][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=沥青指数 XSGE
+
+[20160816 15:18:14.512][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=沥青指数 XSGE ,startIndex=5
+
+[20160816 15:18:14.559][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160816 15:18:14.634][12][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=97
+
+[20160816 15:18:14.636][12][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160816 15:18:14.636][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160816 15:18:24.410][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|28|
+
+[20160816 15:18:24.410][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:24.511][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:24.538][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:24.538][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:25.789][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|40|
+
+[20160816 15:18:25.790][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:25.874][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:25.875][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:25.875][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:26.998][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|48|
+
+[20160816 15:18:26.999][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:27.081][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:27.082][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:27.082][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:29.093][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|62|
+
+[20160816 15:18:29.095][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:29.183][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:29.183][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:29.183][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:31.686][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|77|
+
+[20160816 15:18:31.686][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:31.776][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:31.776][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:31.776][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:34.735][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|98|
+
+[20160816 15:18:34.735][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:34.812][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:34.813][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:34.813][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:37.006][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|113|
+
+[20160816 15:18:37.006][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:37.086][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 15:18:37.087][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 15:18:37.087][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 15:18:37.973][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160816 15:18:37.974][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 15:18:39.915][10][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:s124e，信息内容为:F|1#s124e#-7.51#0#沥青指数(上期所)#2015-11-18#2016-5-13|
+
+[20160816 16:07:40.659][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:07:40.660][10][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160816 16:07:44.586][10][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:s124e，信息内容为:F|1#s124e#-7.51#0#沥青指数(上期所)#2015-11-18#2016-5-13|
+
+2016-8-16 下午 4:07:44 [Warn] Data sent while closing or after close. Ignoring. 
+[20160816 16:07:44.588][10][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160816 16:07:44.794][23][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160816 16:07:44.794][10][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160816 16:07:44.794][10][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160816 16:07:44.795][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:50568][0:] 处理没有来源的消息
+
+[20160816 16:07:44.795][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160816 16:07:44.820][22][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160816 16:07:44.820][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:07:44.847][10][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|c125a#143118|
+
+[20160816 16:07:44.850][24][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|c125a#143118#null|
+
+[20160816 16:07:44.850][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:07:44.851][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:c125a 密码:143118 来源:null
+
+[20160816 16:07:44.851][10][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=c125a password=143118 source=null
+
+[20160816 16:07:44.859][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160816 16:07:44.860][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=84
+
+[20160816 16:07:44.860][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=84
+
+[20160816 16:08:13.063][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|c125a|
+
+[20160816 16:08:23.228][29][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160816 16:08:56.864][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:08:59.728][10][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:50568][84:c125a]
+
+[20160816 16:09:00.457][10][Normal][KGameServer.Match.Start]	1人局开始: [84:] 
+
+[20160816 16:09:00.460][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160816 16:09:00.460][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160816 16:09:00.460][12][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160816 16:09:01.392][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160816 16:09:01.395][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160816 16:09:01.908][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160816 16:09:01.908][12][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160816 16:09:01.908][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160816 16:09:01.909][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=2833
+
+[20160816 16:09:01.909][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=735
+
+[20160816 16:09:01.909][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160816 16:09:01.910][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=002268 XSHE
+
+[20160816 16:09:01.910][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=002268 XSHE ,startIndex=164
+
+[20160816 16:09:09.034][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160816 16:09:09.080][12][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=98
+
+[20160816 16:09:09.080][12][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160816 16:09:09.080][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160816 16:09:22.174][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|41|
+
+[20160816 16:09:22.174][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:22.291][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:22.292][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:22.292][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:23.547][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|46|
+
+[20160816 16:09:23.547][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:23.646][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:23.647][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:23.647][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:27.681][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|65|
+
+[20160816 16:09:27.681][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:27.795][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:27.795][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:27.796][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:29.270][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|70|
+
+[20160816 16:09:29.270][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:29.368][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:29.369][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:29.369][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:31.179][25][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|83|
+
+[20160816 16:09:31.180][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:31.269][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:31.269][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:31.269][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:33.039][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|89|
+
+[20160816 16:09:33.039][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:33.124][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:33.124][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:33.124][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:36.480][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|103|
+
+[20160816 16:09:36.481][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:36.568][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:36.568][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:36.569][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:37.750][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|111|
+
+[20160816 16:09:37.751][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160816 16:09:37.843][10][Normal][KGameServer.Util.LogException]	Table 'kgame.tbl_traderecrod' doesn't exist
+
+[20160816 16:09:37.844][10][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy, Double price) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 493
+
+[20160816 16:09:37.844][10][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160816 16:09:39.079][7][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160816 16:09:39.080][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+

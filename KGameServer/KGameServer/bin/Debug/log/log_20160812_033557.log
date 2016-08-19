@@ -1,0 +1,340 @@
+2016-8-12 下午 3:35:57 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160812 15:36:16.640][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160812 15:36:16.642][9][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160812 15:36:16.643][9][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160812 15:36:16.647][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:53563][0:] 处理没有来源的消息
+
+[20160812 15:36:16.647][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160812 15:36:16.651][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160812 15:36:16.652][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:16.869][9][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|r111u#288644|
+
+[20160812 15:36:16.892][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|r111u#288644#null|
+
+[20160812 15:36:16.892][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:16.894][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:r111u 密码:288644 来源:null
+
+[20160812 15:36:16.895][9][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=r111u password=288644 source=null
+
+[20160812 15:36:16.903][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160812 15:36:16.905][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=70
+
+[20160812 15:36:16.905][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=70
+
+[20160812 15:36:18.185][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|r111u|
+
+[20160812 15:36:18.191][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160812 15:36:18.191][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:18.193][9][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:53563][70:r111u]
+
+[20160812 15:36:18.199][9][Normal][KGameServer.Match.Start]	1人局开始: [70:] 
+
+[20160812 15:36:18.199][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160812 15:36:18.200][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160812 15:36:18.200][11][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160812 15:36:18.236][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160812 15:36:18.239][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160812 15:36:18.251][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160812 15:36:18.252][11][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160812 15:36:18.259][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160812 15:36:18.259][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=2833
+
+[20160812 15:36:18.259][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=947
+
+[20160812 15:36:18.260][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160812 15:36:18.260][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=002480 XSHE
+
+[20160812 15:36:18.260][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=002480 XSHE ,startIndex=252
+
+[20160812 15:36:18.327][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160812 15:36:18.553][11][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=79
+
+[20160812 15:36:18.556][11][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160812 15:36:18.556][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160812 15:36:26.359][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|11|
+
+[20160812 15:36:26.359][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:27.305][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '70,79',11',True',0)' at line 1
+
+[20160812 15:36:27.316][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:36:27.317][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:36:30.260][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|43|
+
+[20160812 15:36:30.260][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:31.271][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '70,79',43',False',0)' at line 1
+
+[20160812 15:36:31.271][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:36:31.271][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:36:33.859][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|70|
+
+[20160812 15:36:33.859][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:34.589][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '70,79',70',True',0)' at line 1
+
+[20160812 15:36:34.589][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:36:34.590][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:36:37.604][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|97|
+
+[20160812 15:36:37.604][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:38.300][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '70,79',97',False',0)' at line 1
+
+[20160812 15:36:38.300][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:36:38.300][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:36:42.176][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160812 15:36:42.177][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:36:42.183][9][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:r111u，信息内容为:F|1#r111u#0.00#0#002480(深证)#2014-9-23#2015-3-25|
+
+[20160812 15:40:04.114][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:04.114][9][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160812 15:40:04.116][9][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:r111u，信息内容为:F|1#r111u#0.00#0#002480(深证)#2014-9-23#2015-3-25|
+
+2016-8-12 下午 3:40:04 [Warn] Data sent while closing or after close. Ignoring. 
+[20160812 15:40:04.118][9][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160812 15:40:07.330][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160812 15:40:07.331][9][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160812 15:40:07.331][9][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160812 15:40:07.331][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:53618][0:] 处理没有来源的消息
+
+[20160812 15:40:07.331][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160812 15:40:07.362][25][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160812 15:40:07.362][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:07.386][9][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|t112e#938412|
+
+[20160812 15:40:07.390][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|t112e#938412#null|
+
+[20160812 15:40:07.390][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:07.390][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:t112e 密码:938412 来源:null
+
+[20160812 15:40:07.391][9][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=t112e password=938412 source=null
+
+[20160812 15:40:07.397][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160812 15:40:07.398][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=71
+
+[20160812 15:40:07.398][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=71
+
+[20160812 15:40:09.091][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|t112e|
+
+[20160812 15:40:09.102][23][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160812 15:40:09.102][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:09.103][9][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:53618][71:t112e]
+
+[20160812 15:40:09.103][9][Normal][KGameServer.Match.Start]	1人局开始: [71:] 
+
+[20160812 15:40:09.103][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160812 15:40:09.103][11][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160812 15:40:09.104][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160812 15:40:09.111][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160812 15:40:09.111][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=2833
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=1498
+
+[20160812 15:40:09.122][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160812 15:40:09.123][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=300251 XSHE
+
+[20160812 15:40:09.123][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=300251 XSHE ,startIndex=407
+
+[20160812 15:40:09.178][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160812 15:40:09.229][11][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=80
+
+[20160812 15:40:09.230][11][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160812 15:40:09.230][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160812 15:40:16.779][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|9|
+
+[20160812 15:40:16.780][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:16.847][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',9',True',0)' at line 1
+
+[20160812 15:40:16.848][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:16.848][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:17.945][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|19|
+
+[20160812 15:40:17.946][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:18.010][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',19',False',0)' at line 1
+
+[20160812 15:40:18.010][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:18.011][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:19.352][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|31|
+
+[20160812 15:40:19.352][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:19.417][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',31',True',0)' at line 1
+
+[20160812 15:40:19.418][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:19.418][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:20.493][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|39|
+
+[20160812 15:40:20.493][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:20.561][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',39',False',0)' at line 1
+
+[20160812 15:40:20.562][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:20.562][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:21.599][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=6|48|
+
+[20160812 15:40:21.600][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:21.671][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',48',True',0)' at line 1
+
+[20160812 15:40:21.671][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:21.671][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:22.590][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=7|56|
+
+[20160812 15:40:22.590][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:22.667][9][Normal][KGameServer.Util.LogException]	You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '71,80',56',False',0)' at line 1
+
+[20160812 15:40:22.667][9][Normal][KGameServer.Util.LogException]	   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 KGameServer.DBManager.AddNewTraderecordInfo(PlayerConnection playerConnection, Int32 matchID, Int32 index, Boolean isBuy) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 489
+
+[20160812 15:40:22.668][9][Normal][KGameServer.Match.ProcessUserOperation]	由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。
+
+[20160812 15:40:31.879][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160812 15:40:31.880][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160812 15:40:31.881][9][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:t112e，信息内容为:F|1#t112e#0.00#0#300251(深证)#2013-10-17#2014-7-29|
+

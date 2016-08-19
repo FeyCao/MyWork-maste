@@ -82,7 +82,7 @@ namespace KGameServer
             mutex.ReleaseMutex();
 
             Util.Log(playersCount.ToString() + "人局开始: " + userInfos);
-            HisDataMng.RequestHistoryData(OnReceiveHistoryDataCallBack);
+            HisDataMng.RequestHistoryData(OnReceiveHistoryDataCallBack,105);
 
         }
 
@@ -201,7 +201,9 @@ namespace KGameServer
                 content = userOperationDict.Keys.Count + "#";
                 foreach (PlayerConnection p in userOperationDict.Keys)
                 {
+                    
                     double totalProfit = CalculateSingleRation(userOperationDict[p]);
+                    
                     content += p.UserName + "#" + totalProfit.ToString("0.00") +"#" + "0#";
                 }
                 string exchange = "";
@@ -258,6 +260,7 @@ namespace KGameServer
             }
             for (int i = 0; i < userOperationList.Count; i++)
             {
+                
                 if (userOperationList[i].isBuy)
                 {
                     totalProfit -= userOperationList[i].price * 100 / standard;
@@ -278,6 +281,14 @@ namespace KGameServer
         /// <param name="isBuy"></param>
         public void ProcessUserOperation(PlayerConnection playerConnection, int index, bool isBuy)
         {
+            //将该用户买卖的信息插入数据库
+           /* int traderID = DBManager.AddNewTraderecordInfo(playerConnection, matchID, index, isBuy);
+            if (traderID == -1)
+            {
+                Util.Log("由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。");
+                //this.CloseMatch();
+                return;
+            }*/
             mutex.WaitOne();
             try
             {
@@ -302,7 +313,16 @@ namespace KGameServer
                 if(userOperationList!=null)
                 {
                     userOperationList.Add(new UserOperation(isBuy, index, dayDataList[index].close));
+                    //将该用户买卖的信息插入数据库
+                    int traderID = DBManager.AddNewTraderecordInfo(playerConnection, matchID, index, isBuy, dayDataList[index].close);
+                    if (traderID == -1)
+                    {
+                        Util.Log("由于未能添加用户买卖的信息数据库中，此次对局无法成功启动，返回。。。。。。");
+                        //this.CloseMatch();
+                        //return;
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -346,6 +366,40 @@ namespace KGameServer
             }
         }
 
+        /// <summary>
+        /// 当某个玩家分享的数据
+        /// </summary>
+        /// <param name="playerConnection"></param>
+        public void PlayerShare(PlayerConnection playerConnection)
+        {
+            /*bool bCanCloseMatch = false;
+            mutex.WaitOne();
+            try
+            {
+                if (playerConnectionList.Contains(playerConnection) == true)
+                {
+                    if (endPlayerConnectionList.Contains(playerConnection) == false)
+                    {
+                        endPlayerConnectionList.Add(playerConnection);
+                        if (endPlayerConnectionList.Count == playerConnectionList.Count)
+                        {
+                            //收到全部玩家的结束消息
+                            bCanCloseMatch = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            mutex.ReleaseMutex();
+
+            if (bCanCloseMatch)
+            {
+                CloseMatch();
+            }*/
+        }
 
         /// <summary>
         /// 历史数据按照时间倒序排列
@@ -353,6 +407,70 @@ namespace KGameServer
         /// <param name="historyDataList"></param>
         /// <param name="codeInfo"></param>
         private void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo)
+        {
+            dayDataList.Clear();
+
+            thisTurnCodeInfo = codeInfo;
+            standard = historyDataList[mainDayCount].close;
+
+            string jsonText = "{\"data\":[";
+
+            for (int i = 0; i < mainDayCount + preDayCount; i++)
+            {
+                if (i < mainDayCount)
+                {
+                    dayDataList.Insert(0, historyDataList[i]);
+                }
+                int index = mainDayCount + preDayCount - 1 - i;
+                jsonText += (100 * (historyDataList[index].open / standard)).ToString("0.000") + ",";
+                jsonText += (100 * (historyDataList[index].max / standard)).ToString("0.000") + ",";
+                jsonText += (100 * (historyDataList[index].min / standard)).ToString("0.000") + ",";
+                jsonText += (100 * (historyDataList[index].close / standard)).ToString("0.000") + ",";
+                jsonText += historyDataList[index].volumn.ToString();
+
+                if (index != 0)
+                {
+                    jsonText += ",";
+                }
+            }
+            jsonText += "],\"count\":[";
+            jsonText += mainDayCount.ToString() + "," + preDayCount.ToString() + "]}";
+
+            ///将该对局信息插入数据库
+            matchID = DBManager.AddNewMatchInfo(0, codeInfo, historyDataList[0].dateTime, mainDayCount);
+            if (matchID == -1)
+            {
+                Util.Log("由于未能添加对局信息到数据库中，此次对局无法成功启动，返回。。。。。。");
+                this.CloseMatch();
+                return;
+            }
+
+            mutex.WaitOne();
+            try
+            {
+                //通知双方对局开始
+                foreach (PlayerConnection pc in playerConnectionList)
+                {
+                    pc.BeginNewMatch(this);
+                }
+
+                foreach (PlayerConnection pc in playerConnectionList)
+                {
+                    pc.SendMatchHistoryData(jsonText);
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            mutex.ReleaseMutex();
+        }
+        /// <summary>
+        /// 历史数据按照时间倒序排列
+        /// </summary>
+        /// <param name="historyDataList"></param>
+        /// <param name="codeInfo"></param>
+        private void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo, int macthID)
         {
             dayDataList.Clear();
 

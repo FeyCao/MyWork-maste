@@ -1,0 +1,78 @@
+2016-8-19 上午 8:54:25 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160819 08:54:30.583][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160819 08:54:30.586][11][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160819 08:54:30.587][11][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160819 08:54:30.590][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:54571][0:] 处理没有来源的消息
+
+[20160819 08:54:30.590][11][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160819 08:54:30.594][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160819 08:54:30.595][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 08:54:30.806][11][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|s149e#950700|
+
+[20160819 08:54:30.812][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|s149e#950700#null|
+
+[20160819 08:54:30.816][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 08:54:30.817][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:s149e 密码:950700 来源:null
+
+[20160819 08:54:30.818][11][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=s149e password=950700 source=null
+
+[20160819 08:54:30.826][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160819 08:54:30.828][11][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=108
+
+[20160819 08:54:30.829][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=108
+
+[20160819 08:54:33.878][11][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|s149e|
+
+[20160819 08:54:33.884][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160819 08:54:33.885][11][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160819 08:54:34.838][11][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:54571][108:s149e]
+
+[20160819 08:54:34.843][11][Normal][KGameServer.Match.Start]	1人局开始: [108:] 
+
+[20160819 08:54:35.883][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160819 08:54:35.884][13][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160819 08:54:35.886][11][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160819 08:54:35.926][13][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160819 08:54:36.875][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160819 08:54:36.888][13][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160819 08:54:36.889][13][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160819 08:54:38.513][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+
+[20160819 08:54:45.960][13][Normal][KGameServer.Util.LogException]	列“DATE”不属于表 Table。
+
+[20160819 08:54:45.973][13][Normal][KGameServer.Util.LogException]	   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 KGameServer.DBManager.GetMatchID(Int32 matchID) 位置 C:\KGameServer\KGameServer\DBManager.cs:行号 454
+
+[20160819 08:54:45.987][13][Normal][KGameServer.Util.LogException]	未将对象引用设置到对象的实例。
+
+[20160819 08:54:45.988][13][Normal][KGameServer.Util.LogException]	   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 398
+
+[20160819 08:54:45.988][13][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160819 08:54:46.005][13][Normal][KGameServer.App.CurrentDomain_UnhandledException]	System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 KGameServer.Match.OnReceiveHistoryDataCallBack(List`1 historyDataList, CodeInfo codeInfo) 位置 C:\KGameServer\KGameServer\Match.cs:行号 414
+   在 KGameServer.HisDataMng.ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, Int32 matchID) 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 470
+   在 KGameServer.HisDataMng.MainProcessThread() 位置 C:\KGameServer\KGameServer\HisDataMng.cs:行号 206
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+

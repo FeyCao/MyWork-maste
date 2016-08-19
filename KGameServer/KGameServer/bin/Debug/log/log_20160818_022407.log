@@ -1,0 +1,77 @@
+2016-8-18 下午 2:24:07 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160818 14:24:17.568][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160818 14:24:17.570][9][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160818 14:24:17.572][9][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160818 14:24:17.575][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:57930][0:] 处理没有来源的消息
+
+[20160818 14:24:17.575][9][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160818 14:24:17.580][15][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160818 14:24:17.582][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 14:24:17.791][9][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|s132u#897997|
+
+[20160818 14:24:17.801][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|s132u#897997#null|
+
+[20160818 14:24:17.802][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 14:24:17.803][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:s132u 密码:897997 来源:null
+
+[20160818 14:24:17.804][9][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=s132u password=897997 source=null
+
+[20160818 14:24:17.811][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160818 14:24:17.813][9][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=91
+
+[20160818 14:24:17.813][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=91
+
+[20160818 14:24:19.803][9][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|s132u|
+
+[20160818 14:24:19.809][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160818 14:24:19.810][9][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160818 14:24:21.070][9][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:57930][91:s132u]
+
+[20160818 14:24:21.073][9][Normal][KGameServer.Match.Start]	1人局开始: [91:] 
+
+[20160818 14:24:21.073][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160818 14:24:21.075][9][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160818 14:24:21.075][11][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160818 14:24:21.104][11][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160818 14:24:21.107][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160818 14:24:21.119][11][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160818 14:24:21.120][11][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160818 14:24:21.128][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest
+
+[20160818 14:24:21.128][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=2833
+
+[20160818 14:24:21.128][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=2707
+
+[20160818 14:24:21.128][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160818 14:24:21.128][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=603011 XSHG
+
+[20160818 14:24:21.129][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	总个数不够count=238，重新取
+
+[20160818 14:24:21.129][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoDict.Keys.Count=2833
+
+[20160818 14:24:21.130][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfoIndex=2453
+
+[20160818 14:24:21.130][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	totalCandleCount=360
+
+[20160818 14:24:21.130][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	codeInfo=600830 XSHG
+
+[20160818 14:24:21.130][11][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	随机数据，codeInfo=600830 XSHG ,startIndex=3600
+

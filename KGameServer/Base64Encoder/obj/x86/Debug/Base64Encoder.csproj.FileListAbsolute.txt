@@ -2,7 +2,7 @@ E:\tomcat-8.0.22\webapps\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.exe
 E:\tomcat-8.0.22\webapps\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.pdb
 E:\tomcat-8.0.22\webapps\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.exe
 E:\tomcat-8.0.22\webapps\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.pdb
-D:\MyWork\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.exe
-D:\MyWork\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.pdb
-D:\MyWork\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.exe
-D:\MyWork\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.pdb
+C:\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.exe
+C:\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.pdb
+C:\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.exe
+C:\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.pdb

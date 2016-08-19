@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define TEST_A
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,13 @@ namespace KGameServer
                 mainDayCount = aMainDayCount;
                 onreceiveHistoryDataCallBack = aOnreceiveHistoryDataCallBack;
             }
+
+            public HisDataRequest(OnReceiveHistoryDataCallBack aOnreceiveHistoryDataCallBack, int matchID)//
+            {
+                preDayCount = 240;
+                mainDayCount = 120;
+                onreceiveHistoryDataCallBack = aOnreceiveHistoryDataCallBack;
+            }
         }
 
 
@@ -70,6 +78,7 @@ namespace KGameServer
         private static Thread processThread;
 
         public delegate void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo);
+  //      public delegate void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo, int matchID);
 
         private static SynQueue<HisDataRequest> hisDataRequestQueue;
 
@@ -192,11 +201,18 @@ namespace KGameServer
                 ///先刷新一遍所有的CodeInfo，如果需要的话
                 RefreshCodeInfoList();
                 Util.Log("RefreshCodeInfoList 已经完成");
+#if TEST_A
 
+                foreach (HisDataRequest hisDataRequest in hisDataRequestList)
+                {
+                    ProcessHisDataRequest(hisDataRequest, mySqlConnection,108);
+                }
+#else
                 foreach (HisDataRequest hisDataRequest in hisDataRequestList)
                 {
                     ProcessHisDataRequest(hisDataRequest, mySqlConnection);
                 }
+#endif
                 Util.Log("ProcessHisDataRequest 已经结束");
 
                 try
@@ -219,6 +235,7 @@ namespace KGameServer
             Util.Log("ProcessHisDataRequest hisDataRequest");
             List<DayData> dayDataList = null;
             CodeInfo codeInfo = null;
+            
             mutexForCodeInfoDict.WaitOne();
             try
             {
@@ -263,9 +280,15 @@ namespace KGameServer
 
                     Util.Log("随机数据，codeInfo=" + codeInfo.ToString() + " ,startIndex=" + startIndex);
 
+
+
                     //测试用
                    // codeInfo = new CodeInfo("600459", "XSHG");
                    // startIndex = 1105;
+
+                    
+                    //codeInfo = new CodeInfo("002260", "XSHE");
+                    //startIndex = 1412;
 
                     string tbl = "tbl_dayhistorydata";
                     if (codeInfo.exchange == "XSHG")
@@ -277,7 +300,6 @@ namespace KGameServer
                         tbl = "tbl_gp_sz_dayhistorydata";
                     }
                     sql = "select * from " + tbl + " where CODE='" + codeInfo.code + "' order by date desc LIMIT " + startIndex + "," + totalCandleCount;
-
                     command = mySqlConnection.CreateCommand();
                     command.CommandText = sql;
                     adapter = new MySqlDataAdapter(command);
@@ -343,6 +365,119 @@ namespace KGameServer
             hisDataRequest.onreceiveHistoryDataCallBack(dayDataList, codeInfo);
         }
 
+        private static void ProcessHisDataRequest(HisDataRequest hisDataRequest, MySqlConnection mySqlConnection, int matchID)
+        {
+            Util.Log("ProcessHisDataRequest hisDataRequest matchID");
+            List<DayData> dayDataList = null;
+            CodeInfo codeInfo = null;
+
+            mutexForCodeInfoDict.WaitOne();
+            try
+            {
+                int tryCount = 0;
+                string sql = null;
+                MySqlCommand command = null;
+                MySqlDataAdapter adapter = null;
+                DataSet ds = null;
+                //根据随机数获得Seed,0到200
+                Random r = new Random((int)(DateTime.Now.Ticks));
+                bool isQH = false;
+                if (r.Next(10) <= 7)
+                {
+                    isQH = true;
+                }
+                Dictionary<CodeInfo, int> codeInfoDict = codeInfoDictGP;
+                if (isQH)
+                {
+                    codeInfoDict = codeInfoDictQH;
+                }
+                while (tryCount < 10)
+                {
+
+
+                    //测试用
+                    // codeInfo = new CodeInfo("600459", "XSHG");
+                    // startIndex = 1105;
+                    // codeInfo = new CodeInfo("002260", "XSHE");
+                    // startIndex = 1738;
+                    int totalCandleCount = hisDataRequest.preDayCount + hisDataRequest.mainDayCount;
+                    matchInfo p = DBManager.GetMatchID(matchID);
+                    codeInfo = new CodeInfo(p.code, p.exchange);
+                    string tbl = "tbl_dayhistorydata";
+                    if (codeInfo.exchange == "XSHG")
+                    {
+                        tbl = "tbl_gp_sh_dayhistorydata";
+                    }
+                    else if (codeInfo.exchange == "XSHE")
+                    {
+                        tbl = "tbl_gp_sz_dayhistorydata";
+                    }
+                    sql = "select * from " + tbl + " where CODE='" + p.code + "' and date<='" + p.startTime.ToString("yyyy-MM-dd") + "' order by date desc limit " + totalCandleCount;//p.daycount;
+
+                    command = mySqlConnection.CreateCommand();
+                    command.CommandText = sql;
+                    adapter = new MySqlDataAdapter(command);
+                    ds = new DataSet();
+                    ds.Tables.Clear();
+                    adapter.Fill(ds);
+                    dayDataList = new List<DayData>();//历史数据，按照时间倒序排列
+                    if (ds.Tables[0].Rows.Count == 0)
+                    {
+
+                        tryCount++;
+                        Util.Log("数据取到了全是0，需要再取一次数据，已经尝试了" + tryCount + " 次");
+                        continue;
+                    }
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        DayData dayData = new DayData();
+                        dayData.dateTime = (DateTime)row["DATE"];
+                        dayData.open = (double)row["OPEN"];
+                        dayData.max = (double)row["MAXPRICE"];
+                        dayData.min = (double)row["MINPRICE"];
+                        dayData.close = (double)row["CLOSE"];
+                        dayData.volumn = (long)row["VOLUMN"];
+                        dayDataList.Add(dayData);
+                    }
+                    break;
+                }
+
+                if (codeInfoDictGP.ContainsKey(codeInfo) == true)
+                {
+                    //取时间区间内的除权
+                DateTime startDate = dayDataList[dayDataList.Count - 1].dateTime;
+                DateTime endDate = dayDataList[0].dateTime;
+
+                sql = "select * from historydata.tbl_gp_xrinformation where CODE='" + codeInfo.code + "' and exchange='" + codeInfo.exchange + "' and date>'" + startDate.ToString("yyyy-MM-dd 00:00:00") + "' and date<='" + endDate.ToString("yyyy-MM-dd 00:00:00") + "' order by date desc";
+                command.CommandText = sql;
+                adapter = new MySqlDataAdapter(command);
+                ds.Tables.Clear();
+                adapter.Fill(ds);
+                List<PWRData> pwrDataList = new List<PWRData>();
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    PWRData pwrData = new PWRData();
+                    pwrData.date = (DateTime)row["DATE"];
+                    pwrData.instock = (double)row["instock"];
+                    pwrData.rightstockNum = (double)row["rightstockNum"];
+                    pwrData.rightstockPrice = (double)row["rightstockPrice"];
+                    pwrData.bonus = (double)row["bonus"];
+                    pwrDataList.Add(pwrData);
+                }
+                RestoreExright(dayDataList, pwrDataList);
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            mutexForCodeInfoDict.ReleaseMutex();
+            Util.Log("获得到了历史数据，开始调用回调函数");
+            hisDataRequest.onreceiveHistoryDataCallBack(dayDataList, codeInfo);
+        }
 
         /// <summary>
         /// 复权
@@ -382,7 +517,22 @@ namespace KGameServer
             int aPreDayCount = 240, int aMainDayCount = 120)
         {
             Util.Log("RequestHistoryData 请求");
-            hisDataRequestQueue.Enqueue(new HisDataRequest(onreceiveHistoryDataCallBack, aPreDayCount, aMainDayCount),
+            hisDataRequestQueue.Enqueue(new HisDataRequest(onreceiveHistoryDataCallBack, aPreDayCount, aMainDayCount),false);
+            //hisDataRequestQueue.Enqueue(new HisDataRequest(onreceiveHistoryDataCallBack, aPreDayCount, aMainDayCount),false);
+            Util.Log("入队结束");
+        }
+
+        /// <summary>
+        /// 根据MatchID请求历史数据
+        /// </summary>
+        /// <param name="onreceiveHistoryDataCallBack"></param>
+        /// <param name="aPreDayCount"></param>
+        /// <param name="aMainDayCount"></param>
+        public static void RequestHistoryData(OnReceiveHistoryDataCallBack onreceiveHistoryDataCallBack,
+            int matchID)
+        {
+            Util.Log("RequestHistoryData 请求");
+            hisDataRequestQueue.Enqueue(new HisDataRequest(onreceiveHistoryDataCallBack, matchID),
                 false);
             Util.Log("入队结束");
         }
