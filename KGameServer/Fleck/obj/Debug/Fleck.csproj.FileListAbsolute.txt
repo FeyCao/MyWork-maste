@@ -14,3 +14,7 @@ C:\KGameServer\Fleck\bin\Debug\Fleck.dll
 C:\KGameServer\Fleck\bin\Debug\Fleck.pdb
 C:\KGameServer\Fleck\obj\Debug\Fleck.dll
 C:\KGameServer\Fleck\obj\Debug\Fleck.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\Fleck\bin\Debug\Fleck.dll
+C:\MyWork-master\MyWork-maste\KGameServer\Fleck\bin\Debug\Fleck.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\Fleck\obj\Debug\Fleck.dll
+C:\MyWork-master\MyWork-maste\KGameServer\Fleck\obj\Debug\Fleck.pdb

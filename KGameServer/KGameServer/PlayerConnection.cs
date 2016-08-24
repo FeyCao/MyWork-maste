@@ -148,9 +148,14 @@ namespace KGameServer
                     //客户端操作内容结束
                     ProcessUserOperationEnd();
                     break;
+                case "G":
+                    //客户端请求分享数据
+                    ProcessOperationShare(p.Content);
+                    break;
+
                 case "S":
                     //客户端操作分享请求
-                    ProcessUserOperationShare(p.Content);
+                    ProcessUserOperationShare();
                     break;
 
                 default:
@@ -169,11 +174,35 @@ namespace KGameServer
 
 
         /// <summary>
-        /// 该玩家的对局分享吧
+        /// 该玩家的对局分享
         /// </summary>
-        private void ProcessUserOperationShare(string content)
+        private void ProcessUserOperationShare()
         {
             MatchRunning.PlayerShare(this);
+        }
+
+        /// <summary>
+        /// 分享的对局//响应客户端请求的分享数据G
+        /// </summary>
+        private void ProcessOperationShare(string content)
+        {
+            if (content == null) return;
+            string[] fs = content.Split('#');
+            Util.Log("分享的用户ID:" + fs[0] + " 对战ID:" + fs[1]);
+            string errMsg = "";
+            int result = DBManager.ValidateShare(fs[0],fs[1],out errMsg); ;
+            if (result == 1)
+            {
+                //分享成功
+                string contentToSend = "H|" + fs[0] + "#" + fs[2] + "|";
+                Util.Log("分享成功:" + contentToSend);
+                clientConnection.Send(contentToSend);
+            }
+            else
+            {
+                //分享失败
+                clientConnection.Send("I|" + errMsg + "|");
+            }
         }
 
         public void ProcessUserQuickLogin(string content)
@@ -304,7 +333,12 @@ namespace KGameServer
             Util.Log("发送结束对局信息到:" + userName + "，信息内容为:" + content);
             clientConnection.Send(content);
         }
-
+        public void SendShareString(string shareInfo)
+        {
+            string content = "S|"  + UserId +"#" + shareInfo + "|";
+            Util.Log("发送分享对局信息到:" + userName + "，信息内容为:" + content);
+            clientConnection.Send(content);
+        }
         public override string ToString()
         {
             string ret = "";

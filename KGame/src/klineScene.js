@@ -271,6 +271,27 @@ var KLineScene = SceneBase.extend(
 			self.getklinedata(packet.content);
 			console.log("get kline passed");
 		}
+		else if (packet.msgType=="S")
+		{
+			//接收到了K线数据的分享消息
+			console.log("call get kline data");
+			//self.share(packet.content);
+			console.log("get kline passed"+packet.content);
+		}
+		else if (packet.msgType=="H")
+		{
+			//成功接收到了K线数据的分享数据
+			console.log("call get kline data");
+			//self.share(packet.content);
+			console.log("get kline passed"+packet.content);
+		}
+		else if (packet.msgType=="I")
+		{
+			//接收到了K线数据的分享错误消息
+			console.log("call get kline data");
+			//self.share(packet.content);
+			console.log("get kline passed"+packet.content);
+		}
 	},
 	
 	showMatchEndInfo:function(content)
@@ -311,18 +332,29 @@ var KLineScene = SceneBase.extend(
 		//分享
 		//this.matchEndInfoLayer.hideLayer();
 		//this.resumeLowerLayer();
-		gSocketConn.UnRegisterEvent("onmessage",this.messageCallBack);
+		gSocketConn.SendShareMessage();
 		//分享函数
 		this.share();
 		
 	},
 	
-	share:function()
+	share:function(content)
 	{
 		// window.location.href="myapp:myfunction:share";//"javascript:gotoshare()"; 
-		console.log("share:function()  visible = true");
-		//window.open("shareGame.html");
-		window.location.href="shareGame.html";
+		var fields=content.split("#");
+		var len=fields.length;
+		var userID = fields[0];
+		var matchID = fields[1];
+		//this.stockInfoLabel.setString("这是"+fields[len-3]+" "+fields[len-2]+"到"+fields[len-1]+"的日线图");
+		//console.log("share:function()  visible = true");
+		//WebSocketClient.html
+		//var url = "share.html?"+"userID="+userID+"&matchID="+matchID;
+		var url = "WebSocketClient.html?"+"userID="+userID+"&matchID="+matchID;
+		console.log(url);
+		gSocketConn.ShareMessage(userID,matchID);
+//		
+//		window.open(url);
+		//window.location.href="shareGame.html";
 	},
 	
 	
@@ -479,7 +511,7 @@ var KLineScene = SceneBase.extend(
 		}
 		this.setCountDownSprite();
 	},
-	//TEST
+	//SHARE_TEST
 	setDataForLlineLayerTEST:function()
 	{
 		if(this.klinedataMain==null || this.prevKlineData==null) return;
@@ -610,7 +642,7 @@ var KLineScene = SceneBase.extend(
 		this.drawCandlesOneByOne();
 	},
 	
-	//TEST
+	//SHARE_TEST
 	advanceToMainKLine_Phase:function()
 	{
 		this.phase2=true;
@@ -665,7 +697,7 @@ var KLineScene = SceneBase.extend(
 		setTimeout(function(){self.drawCandlesOneByOne();},this.currentCandleDrawInterval);
 	},
 	
-	//TEST 一次性画出用户数据图
+	//SHARE_TEST 一次性画出用户数据图
 	drawCandlesAll:function()
 	{	
 	

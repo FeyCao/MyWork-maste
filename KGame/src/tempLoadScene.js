@@ -131,6 +131,12 @@ var TempLoadScene = SceneBase.extend(
 			this.stopProgress();
 			this.showMessageBox("快速登录失败:"+packet.content,function(){self.messageBoxClosed();});
 		}
+		else if(packet.msgType=="S")
+		{
+			//分享成功
+			this.stopProgress();
+			//gLoginManager.Login(this.username,this.password,null,function(packet){self.messageCallback(packet)},function(){self.connectErrorCallBack()});
+		}
 	},
 	
 	OnLogined:function(username)

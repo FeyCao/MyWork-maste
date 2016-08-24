@@ -1,5 +1,4 @@
-﻿#define TEST_A
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +23,14 @@ namespace KGameServer
         {
             public int preDayCount;
             public int mainDayCount;
+            public int matchID;
             public OnReceiveHistoryDataCallBack onreceiveHistoryDataCallBack;
-
+            public OnReceiveBusinessDataCallBack onreceiveBusinessDataCallBack;
             public HisDataRequest(OnReceiveHistoryDataCallBack aOnreceiveHistoryDataCallBack)
             {
                 preDayCount = 240;
                 mainDayCount = 60;
+                matchID = -1;
                 onreceiveHistoryDataCallBack = aOnreceiveHistoryDataCallBack;
             }
 
@@ -37,14 +38,21 @@ namespace KGameServer
             {
                 preDayCount = aPreDayCount;
                 mainDayCount = aMainDayCount;
+                matchID = -1;
                 onreceiveHistoryDataCallBack = aOnreceiveHistoryDataCallBack;
             }
 
-            public HisDataRequest(OnReceiveHistoryDataCallBack aOnreceiveHistoryDataCallBack, int matchID)//
+            public HisDataRequest(OnReceiveHistoryDataCallBack aOnreceiveHistoryDataCallBack, int aMatchID)//
             {
                 preDayCount = 240;
                 mainDayCount = 120;
+                matchID = aMatchID;
                 onreceiveHistoryDataCallBack = aOnreceiveHistoryDataCallBack;
+            }
+
+            public HisDataRequest(OnReceiveBusinessDataCallBack aOnReceiveBusinessDataCallBack)
+            {
+                onreceiveBusinessDataCallBack = aOnReceiveBusinessDataCallBack;
             }
         }
 
@@ -78,7 +86,7 @@ namespace KGameServer
         private static Thread processThread;
 
         public delegate void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo);
-  //      public delegate void OnReceiveHistoryDataCallBack(List<DayData> historyDataList, CodeInfo codeInfo, int matchID);
+        public delegate void OnReceiveBusinessDataCallBack(List<int> businessDataList);
 
         private static SynQueue<HisDataRequest> hisDataRequestQueue;
 
@@ -201,18 +209,12 @@ namespace KGameServer
                 ///先刷新一遍所有的CodeInfo，如果需要的话
                 RefreshCodeInfoList();
                 Util.Log("RefreshCodeInfoList 已经完成");
-#if TEST_A
-
                 foreach (HisDataRequest hisDataRequest in hisDataRequestList)
                 {
-                    ProcessHisDataRequest(hisDataRequest, mySqlConnection,108);
+                    if (hisDataRequest.matchID == -1)
+                    { ProcessHisDataRequest(hisDataRequest, mySqlConnection); }
+                    else { ProcessHisDataRequest(hisDataRequest, mySqlConnection, hisDataRequest.matchID); }
                 }
-#else
-                foreach (HisDataRequest hisDataRequest in hisDataRequestList)
-                {
-                    ProcessHisDataRequest(hisDataRequest, mySqlConnection);
-                }
-#endif
                 Util.Log("ProcessHisDataRequest 已经结束");
 
                 try
@@ -356,6 +358,7 @@ namespace KGameServer
                 }
                 
             }
+
             catch (Exception ex)
             {
                 Util.LogException(ex);
@@ -478,6 +481,8 @@ namespace KGameServer
             Util.Log("获得到了历史数据，开始调用回调函数");
             hisDataRequest.onreceiveHistoryDataCallBack(dayDataList, codeInfo);
         }
+
+        
 
         /// <summary>
         /// 复权

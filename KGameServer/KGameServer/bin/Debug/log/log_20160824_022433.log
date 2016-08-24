@@ -1,0 +1,191 @@
+2016-8-24 下午 2:24:33 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160824 14:26:43.787][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160824 14:26:43.789][16][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=S|null#null|
+
+[20160824 14:26:43.790][3][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160824 14:26:43.791][3][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160824 14:26:43.795][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:55491][0:] 处理没有来源的消息
+
+[20160824 14:26:43.795][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160824 14:26:43.797][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:26:43.832][3][Normal][KGameServer.ServerInst.ThreadProc]	消息处理时发生错误...
+
+[20160824 14:26:43.832][3][Normal][KGameServer.Util.LogException]	未将对象引用设置到对象的实例。
+
+[20160824 14:26:43.833][3][Normal][KGameServer.Util.LogException]	   在 KGameServer.PlayerConnection.ProcessUserOperationShare() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 181
+   在 KGameServer.PlayerConnection.ProcessPacket(Packet p) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 158
+   在 KGameServer.PlayerConnection.ProcessMessage(String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 116
+   在 KGameServer.ServerInst.SocketReceievedMsg(IWebSocketConnection clientConnection, String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 241
+   在 KGameServer.ServerInst.ThreadProc() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 126
+
+[20160824 14:47:35.792][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:35.793][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160824 14:47:35.795][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160824 14:47:35.804][19][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160824 14:47:35.804][3][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160824 14:47:35.804][3][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160824 14:47:35.805][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:56016][0:] 处理没有来源的消息
+
+[20160824 14:47:35.805][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160824 14:47:35.812][20][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=S|null#null|
+
+[20160824 14:47:35.813][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:35.834][3][Normal][KGameServer.ServerInst.ThreadProc]	消息处理时发生错误...
+
+[20160824 14:47:35.834][3][Normal][KGameServer.Util.LogException]	未将对象引用设置到对象的实例。
+
+[20160824 14:47:35.834][3][Normal][KGameServer.Util.LogException]	   在 KGameServer.PlayerConnection.ProcessUserOperationShare() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 181
+   在 KGameServer.PlayerConnection.ProcessPacket(Packet p) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 158
+   在 KGameServer.PlayerConnection.ProcessMessage(String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 116
+   在 KGameServer.ServerInst.SocketReceievedMsg(IWebSocketConnection clientConnection, String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 241
+   在 KGameServer.ServerInst.ThreadProc() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 126
+
+[20160824 14:47:40.458][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:40.459][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160824 14:47:40.459][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160824 14:47:40.473][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160824 14:47:40.473][3][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160824 14:47:40.474][3][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160824 14:47:40.474][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:56017][0:] 处理没有来源的消息
+
+[20160824 14:47:40.474][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160824 14:47:40.474][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=S|null#null|
+
+[20160824 14:47:40.475][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:40.492][3][Normal][KGameServer.ServerInst.ThreadProc]	消息处理时发生错误...
+
+[20160824 14:47:40.492][3][Normal][KGameServer.Util.LogException]	未将对象引用设置到对象的实例。
+
+[20160824 14:47:40.492][3][Normal][KGameServer.Util.LogException]	   在 KGameServer.PlayerConnection.ProcessUserOperationShare() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 181
+   在 KGameServer.PlayerConnection.ProcessPacket(Packet p) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 158
+   在 KGameServer.PlayerConnection.ProcessMessage(String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 116
+   在 KGameServer.ServerInst.SocketReceievedMsg(IWebSocketConnection clientConnection, String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 241
+   在 KGameServer.ServerInst.ThreadProc() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 126
+
+[20160824 14:47:42.219][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:42.220][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160824 14:47:42.220][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160824 14:47:42.232][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160824 14:47:42.232][3][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160824 14:47:42.232][3][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160824 14:47:42.232][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:56018][0:] 处理没有来源的消息
+
+[20160824 14:47:42.233][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160824 14:47:42.234][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=S|null#null|
+
+[20160824 14:47:42.234][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:47:42.251][3][Normal][KGameServer.ServerInst.ThreadProc]	消息处理时发生错误...
+
+[20160824 14:47:42.251][3][Normal][KGameServer.Util.LogException]	未将对象引用设置到对象的实例。
+
+[20160824 14:47:42.251][3][Normal][KGameServer.Util.LogException]	   在 KGameServer.PlayerConnection.ProcessUserOperationShare() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 181
+   在 KGameServer.PlayerConnection.ProcessPacket(Packet p) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 158
+   在 KGameServer.PlayerConnection.ProcessMessage(String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\PlayerConnection.cs:行号 116
+   在 KGameServer.ServerInst.SocketReceievedMsg(IWebSocketConnection clientConnection, String msg) 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 241
+   在 KGameServer.ServerInst.ThreadProc() 位置 C:\MyWork-master\MyWork-maste\KGameServer\KGameServer\ServerInst.cs:行号 126
+
+[20160824 14:51:11.564][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:51:11.564][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	ClosePlayerConnection Call
+
+[20160824 14:51:11.564][3][Normal][KGameServer.ServerInst.ClosePlayerConnection]	Closed
+
+[20160824 14:51:30.344][25][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160824 14:51:30.344][3][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160824 14:51:30.344][3][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160824 14:51:30.344][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:56068][0:] 处理没有来源的消息
+
+[20160824 14:51:30.345][3][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160824 14:51:30.384][23][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160824 14:51:30.384][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:51:30.639][3][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|v206a#370068|
+
+[20160824 14:51:30.644][25][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|v206a#370068#null|
+
+[20160824 14:51:30.648][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:51:30.649][3][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:v206a 密码:370068 来源:null
+
+[20160824 14:51:30.651][3][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=v206a password=370068 source=null
+
+[20160824 14:51:30.659][3][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160824 14:51:30.662][3][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=165
+
+[20160824 14:51:30.662][3][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=165
+
+[20160824 14:51:30.663][3][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|v206a|
+
+[20160824 14:51:30.668][25][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160824 14:51:30.669][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:51:30.680][3][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:56068][165:v206a]
+
+[20160824 14:51:30.683][3][Normal][KGameServer.Match.Start]	1人局开始: [165:] 
+
+[20160824 14:51:30.684][3][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160824 14:51:30.684][3][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160824 14:51:30.685][12][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160824 14:51:30.728][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160824 14:51:30.731][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160824 14:51:30.743][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160824 14:51:30.744][12][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160824 14:51:30.751][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+
+[20160824 14:51:35.945][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160824 14:51:35.996][12][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=148
+
+[20160824 14:51:35.998][12][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160824 14:51:35.998][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160824 14:51:59.716][21][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160824 14:51:59.716][3][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160824 14:51:59.721][3][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:v206a，信息内容为:F|1#v206a#0.00#0#沪银指数(上期所)#2015-3-4#2015-8-21|
+

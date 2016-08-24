@@ -1,0 +1,71 @@
+2016-8-22 下午 2:03:21 [Info] Server started at ws://192.168.16.250:8484 (actual port 8484) 
+[20160822 14:03:30.565][14][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__1]	OnOpen
+
+[20160822 14:03:30.568][10][Normal][KGameServer.ServerInst.SocketConnected]	Entered SocketConnected
+
+[20160822 14:03:30.570][10][Normal][KGameServer.ServerInst.SocketConnected]	Connected
+
+[20160822 14:03:30.573][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	为连接:[192.168.16.250:55049][0:] 处理没有来源的消息
+
+[20160822 14:03:30.573][10][Normal][KGameServer.ServerInst.ProcessPreReceievedMessage]	noResourceMessageDict中，无来源的消息共有0 个来源
+
+[20160822 14:03:30.580][17][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=A||
+
+[20160822 14:03:30.582][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160822 14:03:30.794][10][Normal][KGameServer.PlayerConnection.ProcessUserQuickLogin]	快速登录成功:B|r181e#208636|
+
+[20160822 14:03:30.803][18][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=0|r181e#208636#null|
+
+[20160822 14:03:30.803][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160822 14:03:30.805][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	用户登录,用户名:r181e 密码:208636 来源:null
+
+[20160822 14:03:30.806][10][Normal][KGameServer.DBManager.ValidateUser]	ValidateUser username=r181e password=208636 source=null
+
+[20160822 14:03:30.814][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	sql:SELECT id FROM kgame.tbl_user where UserName=?UserName and PWD=?Password and ISNULL(SOURCE)
+
+[20160822 14:03:30.816][10][Normal][KGameServer.DBManager.ValidateUserFromSource_Self]	userid=140
+
+[20160822 14:03:30.816][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	useridRet=140
+
+[20160822 14:03:30.818][10][Normal][KGameServer.PlayerConnection.ProcessUserLogin]	发送信息:1|r181e|
+
+[20160822 14:03:30.823][19][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=3|0|
+
+[20160822 14:03:30.823][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160822 14:03:30.825][10][Normal][KGameServer.MatchMaker.BeginNewMatchForSinglePlayer]	准备开始一场单人游戏:[192.168.16.250:55049][140:r181e]
+
+[20160822 14:03:46.869][10][Normal][KGameServer.Match.Start]	1人局开始: [140:] 
+
+[20160822 14:03:47.239][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	RequestHistoryData 请求
+
+[20160822 14:03:47.241][12][Normal][KGameServer.HisDataMng.MainProcessThread]	hisDataRequestList 出队，hisDataRequestList中个数为:1
+
+[20160822 14:03:47.242][10][Normal][KGameServer.HisDataMng.RequestHistoryData]	入队结束
+
+[20160822 14:03:51.560][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经打开
+
+[20160822 14:03:51.562][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Passed
+
+[20160822 14:03:51.574][12][Normal][KGameServer.HisDataMng.RefreshCodeInfoList]	mutexForCodeInfoDict Released
+
+[20160822 14:03:51.574][12][Normal][KGameServer.HisDataMng.MainProcessThread]	RefreshCodeInfoList 已经完成
+
+[20160822 14:03:51.580][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	ProcessHisDataRequest hisDataRequest matchID
+
+[20160822 14:03:51.610][12][Normal][KGameServer.HisDataMng.ProcessHisDataRequest]	获得到了历史数据，开始调用回调函数
+
+[20160822 14:03:51.667][12][Normal][KGameServer.DBManager.AddNewMatchInfo]	New Match added to database match id=125
+
+[20160822 14:03:51.673][12][Normal][KGameServer.HisDataMng.MainProcessThread]	ProcessHisDataRequest 已经结束
+
+[20160822 14:03:51.673][12][Normal][KGameServer.HisDataMng.MainProcessThread]	数据库已经关闭
+
+[20160822 14:04:14.865][19][Normal][KGameServer.ServerInst+<>c__DisplayClass4.<Init>b__3]	OnMessage:message=E||
+
+[20160822 14:04:14.866][10][Normal][KGameServer.PlayerConnectionMap.GetPlayerConnection]	playerConnectionDict key count=1
+
+[20160822 14:04:14.872][10][Normal][KGameServer.PlayerConnection.SendMatchEndString]	发送结束对局信息到:r181e，信息内容为:F|1#r181e#0.00#0#沪银指数(上期所)#2015-3-4#2015-8-21|
+

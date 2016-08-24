@@ -134,3 +134,23 @@ SocketConn.prototype.SendEndMessage=function()
 {
 	ws.send("E||");
 }
+
+SocketConn.prototype.SendShareMessage=function()
+{
+	console.log("send share msg= S||");
+	ws.send("S||");
+}
+
+SocketConn.prototype.ShareMessage=function(userID,matchID)
+{
+	var shareMsg="G|"+userID+"#"+matchID+"|";
+	console.log("send share msg="+shareMsg);
+	ws.send(shareMsg);
+}
+
+/*SocketConn.prototype.ShareMessage=function(shareMsg)
+{
+	var shareMsg="G|"+shareMsg+"|";
+	console.log("send share msg="+shareMsg);
+	ws.send(shareMsg);
+}*/

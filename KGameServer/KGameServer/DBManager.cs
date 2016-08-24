@@ -30,6 +30,19 @@ namespace KGameServer
         public static readonly char[] randomcharPostfix =new char[]{ 'a', 'e', 'u' };
 
 
+        /*private class DBManagerRequest
+        {
+            public OnReceiveBusinessDataCallBack onreceiveBusinessDataCallBack;
+            public delegate void OnReceiveBusinessDataCallBack(List<int> businessDataList);
+            public DBManagerRequest(OnReceiveBusinessDataCallBack aOnReceiveBusinessDataCallBack)
+            {
+                onreceiveBusinessDataCallBack = aOnReceiveBusinessDataCallBack;
+            }
+
+        }*/
+
+        
+
         public static void Init()
         {
             matchFlagRandom = new Random((int)DateTime.Now.Ticks);
@@ -322,6 +335,63 @@ namespace KGameServer
 
 
         /// <summary>
+        /// 验证分享
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="matchID"></param>
+        /// <returns></returns>
+        public static int ValidateShare(string userID, string matchID, out string errMsg)
+        {
+            Util.Log("ValidateShare userID=" + userID + " matchID=" + matchID);
+            errMsg = null;
+            MySqlConnection mySqlConnection = OpenMySqlConnection(0);
+            if (mySqlConnection == null)
+            {
+                errMsg = "请稍候尝试!";
+                return -2;
+            }
+            MySqlCommand command = null;
+            MySqlDataAdapter adapter = null;
+            DataSet ds = null;
+        
+            try
+            {
+                command = mySqlConnection.CreateCommand();
+                command.CommandText = "select * from kgame.tbl_match where ID =" + userID;
+
+                adapter = new MySqlDataAdapter(command);
+                ds = new DataSet();
+                ds.Tables.Clear();
+                adapter.Fill(ds);
+                if (ds == null)
+                {
+
+                    errMsg = "数据错误!";
+                    return -1;
+
+                }
+                else
+                {
+                    return 1;
+                } 
+          
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+                errMsg = "数据错误!";
+                return -1;
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
+            //return -1;
+
+        }
+  
+
+        /// <summary>
         /// 注册用户
         /// </summary>
         /// <param name="username"></param>
@@ -556,5 +626,62 @@ namespace KGameServer
 
             return traderID;
         }
+
+
+        // /// <summary>
+        /// 获取交易数据
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="matchID"></param>
+        
+        public static List<int> GetBusinessData(int userID,int matchID)
+        {
+            List<int> businessDataList = null;
+            MySqlCommand command = null;
+            MySqlDataAdapter adapter = null;
+            DataSet ds = null;
+            MySqlConnection mySqlConnection = OpenMySqlConnection(0);
+            if (mySqlConnection == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                command = mySqlConnection.CreateCommand();
+                command.CommandText = "select * from kgame.tbl_traderecord where USER_ID =" + userID + " and MATCH_ID =" + matchID + " order by ID asc;";
+                
+                adapter = new MySqlDataAdapter(command);
+                ds = new DataSet();
+                ds.Tables.Clear();
+                adapter.Fill(ds);
+
+                businessDataList = new List<int>();//历史数据，按照时间倒序排列
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    if ((int)row["BUYSELL"]==1)
+                    {
+
+                        businessDataList.Add((int)row["TRADEDAYINDEX"]);
+                    }
+                    else
+                    {
+                        businessDataList.Add(-(int)row["TRADEDAYINDEX"]);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
+            return businessDataList;
+        }
     }
+
 }

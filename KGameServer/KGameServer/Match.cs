@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define TEST_A
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,7 +83,16 @@ namespace KGameServer
             mutex.ReleaseMutex();
 
             Util.Log(playersCount.ToString() + "人局开始: " + userInfos);
-            HisDataMng.RequestHistoryData(OnReceiveHistoryDataCallBack,105);
+
+
+
+#if TEST_A
+
+                 HisDataMng.RequestHistoryData(OnReceiveHistoryDataCallBack,108);
+#else
+            HisDataMng.RequestHistoryData(OnReceiveHistoryDataCallBack);
+#endif
+           
 
         }
 
@@ -240,6 +250,22 @@ namespace KGameServer
             return content;
         }
 
+        public string ShareInfo()
+        {
+            string content = "";
+            mutex.WaitOne();
+            try
+            {
+                content = "#" + matchID;
+            }
+            catch (Exception ex)
+            {
+                Util.LogException(ex);
+            }
+            mutex.ReleaseMutex();
+            return content;
+        }
+
         //计算收益率
         private double CalculateSingleRation(List<UserOperation> userOperationList)
         {
@@ -372,21 +398,33 @@ namespace KGameServer
         /// <param name="playerConnection"></param>
         public void PlayerShare(PlayerConnection playerConnection)
         {
-            /*bool bCanCloseMatch = false;
+            //分享时取出对战局的ID
+            string content = ""+matchID;
+
+            //test
+           // string content = "";
+            string jsonText = "{\"data\":[";
+            List<int> businessInfo = DBManager.GetBusinessData(playerConnection.UserId,matchID);
+            for (int i = 0; i < businessInfo.Count; i++)
+            {
+                
+                jsonText += businessInfo[i];
+                if (i != businessInfo.Count-1)
+                {
+                    jsonText += ",";
+                }
+            }
+            jsonText += "]}";
+            
+            //////
+
             mutex.WaitOne();
             try
             {
-                if (playerConnectionList.Contains(playerConnection) == true)
+                for (int i = 0; i < playerConnectionList.Count; i++)
                 {
-                    if (endPlayerConnectionList.Contains(playerConnection) == false)
-                    {
-                        endPlayerConnectionList.Add(playerConnection);
-                        if (endPlayerConnectionList.Count == playerConnectionList.Count)
-                        {
-                            //收到全部玩家的结束消息
-                            bCanCloseMatch = true;
-                        }
-                    }
+                   // playerConnectionList[i].SendShareString(content);
+                    playerConnectionList[i].SendShareString(jsonText);
                 }
             }
             catch (Exception ex)
@@ -394,11 +432,6 @@ namespace KGameServer
                 Util.LogException(ex);
             }
             mutex.ReleaseMutex();
-
-            if (bCanCloseMatch)
-            {
-                CloseMatch();
-            }*/
         }
 
         /// <summary>

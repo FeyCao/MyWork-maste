@@ -22,4 +22,5 @@ namespace KGameServer
             return dateTime.ToString("yyyy-MM-dd") + " O:" + open.ToString("0.000") + " X:" + max.ToString("0.000") + " I:" + min.ToString("0.000") + " C:" + close.ToString("0.000") + " V:" + volumn;
         }
     }
+
 }

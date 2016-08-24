@@ -6,3 +6,7 @@ C:\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.exe
 C:\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.pdb
 C:\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.exe
 C:\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.exe
+C:\MyWork-master\MyWork-maste\KGameServer\FuturesDataConvert\bin\Debug\FuturesDataConvert.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.exe
+C:\MyWork-master\MyWork-maste\KGameServer\FuturesDataConvert\obj\x86\Debug\FuturesDataConvert.pdb

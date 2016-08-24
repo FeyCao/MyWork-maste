@@ -6,3 +6,7 @@ C:\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.exe
 C:\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.pdb
 C:\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.exe
 C:\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.exe
+C:\MyWork-master\MyWork-maste\KGameServer\Base64Encoder\bin\Debug\Base64Encoder.pdb
+C:\MyWork-master\MyWork-maste\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.exe
+C:\MyWork-master\MyWork-maste\KGameServer\Base64Encoder\obj\x86\Debug\Base64Encoder.pdb
